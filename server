@@ -1,0 +1,11 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+    // Here, you would typically save the email to a database or send it to an email service
+
+    echo 'Thank you for subscribing with email: ' . htmlspecialchars($email);
+} else {
+    echo 'Invalid request method.';
+}
+?>
